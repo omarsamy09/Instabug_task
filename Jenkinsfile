@@ -1,6 +1,6 @@
 pipeline {
    environment {
-        credentials = "os09-dockerhub"
+        credentials = 'os09-dockerhub'
         dockerImage = ""
         image = "go-violin-image"
    }
@@ -17,7 +17,7 @@ pipeline {
     stage("push") {
         steps{
          script{
-            docker.withRegistry('https://registry.hub.docker.com/', credentials) {
+            docker.withRegistry('https://registry.hub.docker.com/omarsamy09', credentials) {
             dockerImage.push("$BUILD_NUMBER")
             dockerImage.push('latest')
             }
