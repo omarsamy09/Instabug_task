@@ -17,7 +17,7 @@ pipeline {
     stage("push") {
         steps{
          script{
-            docker.withRegistry('https://registry.hub.docker.com/omarsamy09', credentials) {
+            docker.withRegistry('https://registry.hub.docker.com/', credentials) {
             dockerImage.push("$BUILD_NUMBER")
             dockerImage.push('latest')
             }
