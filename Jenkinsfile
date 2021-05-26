@@ -2,7 +2,7 @@ pipeline {
    environment {
         credentials = 'os09-dockerhub'
         dockerImage = ""
-        image = "go-violin-image"
+        image = "omarsamy09/go-violin-image"
    }
   agent any
   stages{
