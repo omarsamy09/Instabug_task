@@ -4,5 +4,3 @@ ADD . /app
 WORKDIR /app
 RUN go build -o main .
 CMD ["/app/main"]
-
-jenkins tokn :  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
