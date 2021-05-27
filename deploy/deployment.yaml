@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-violin-deployment
+  namespace: go-violin-app
+  labels: 
+    app: go-violin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: go-violin
+  template:
+    metadata:
+      labels:
+        app: go-violin
+    spec:
+      containers:
+      - name: go-violin-container
+        image: omarsamy09/go-violin-image
+        command: ["/app/main"]
+        ports:
+        - containerPort: 3000
